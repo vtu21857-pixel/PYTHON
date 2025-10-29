@@ -1,0 +1,35 @@
+def find_by_name(name):
+  for employee in employees:
+    if employee["name"] == name:
+      return employee
+  return None
+
+employees = [
+    {"name":"alice","department":"HR"},
+    {"name":"bob","department":"ENGINEERING"},
+    {"name":"charlie","department":"SALES"}
+]
+
+print(find_by_name("bob"))
+
+# task(5b)
+
+def bubble_sort(arr):
+  flag = True
+  while flag:
+    flag = False
+    for i in range(len(arr)-1):
+      if arr[i]["score"] > arr[i+1]["score"]:
+        flag = True
+        arr[i],arr[i+1]= arr[i+1],arr[i]
+
+  return arr
+
+students = [
+    {"name":"alice","score":88},
+    {"name":"bob","score":95},
+    {"name":"charlie","score":75},
+    {"name":"diana","score":85}
+]
+
+print(bubble_sort(students))
