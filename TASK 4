@@ -1,0 +1,51 @@
+list = [10,20]
+a = 30
+list.append(a)
+print(list)
+
+list.pop()
+list.remove(20)
+print(list)
+
+l = [2,6,3,59,2,4,98,55]
+l.sort()
+print(l)
+l.sort(reverse=True)
+print(l)
+
+print(min(l))
+print(max(l))
+
+print(sum(l))
+print((sum(l)//len(l)))
+
+# task(4b)
+
+tuple = (10,"hello",3.14,"world")
+for i in tuple:
+  print(i)
+
+t2 = ("orange",)
+t3 = tuple+t2
+print(t3)
+
+tuple[3] = "pi"
+print(tuple)
+
+# task(4c)
+
+dictionary = {"name":"alice","age":30,"city":"new york"}
+print(dictionary)
+print(dictionary["name"])
+print(dictionary["age"])
+
+dictionary["name"] = "james"
+print(dictionary)
+
+dictionary.pop("city")
+print(dictionary)
+
+for k in dictionary.value:
+  print("key:", k)
+
+print(dictionary.items())
