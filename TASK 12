@@ -1,0 +1,91 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from IPython.display import clear_output
+import time
+import random
+
+# Grid size
+rows, cols = 20, 20
+snake = [(10, 10)]
+direction = (0, 1)  # moving right
+fruit = (random.randint(0, rows-1), random.randint(0, cols-1))
+score = 0
+
+def show_board():
+    board = np.zeros((rows, cols))
+    for r, c in snake:
+        board[r][c] = 1
+    board[fruit[0]][fruit[1]] = 2
+
+    plt.imshow(board, cmap="viridis")
+    plt.axis("off")
+    plt.title(f"Snake Length: {len(snake)} | Score: {score}")
+    plt.show()
+
+def move_snake():
+    global snake, fruit, score
+    head_r, head_c = snake[0]
+    new_head = ((head_r + direction[0]) % rows, (head_c + direction[1]) % cols)
+    snake.insert(0, new_head)
+
+    if new_head == fruit:
+        score += 10
+        fruit = (random.randint(0, rows-1), random.randint(0, cols-1))
+    else:
+        snake.pop()
+
+# Run simple demo automatically
+for _ in range(50):
+    clear_output(wait=True)
+    show_board()
+    move_snake()
+    time.sleep(0.2)
+
+print("Game over (simulation finished).")
+
+# task(12b)
+
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+import numpy as np
+
+# Define board colors
+light_color = (1.0, 0.9, 0.8)
+dark_color = (0.6, 0.3, 0.0)
+
+# Create an 8x8 board
+board_colors = np.zeros((8, 8, 3))
+for r in range(8):
+    for c in range(8):
+        board_colors[r, c] = light_color if (r + c) % 2 == 0 else dark_color
+
+fig, ax = plt.subplots(figsize=(6,6))
+ax.imshow(board_colors, extent=(0,8,0,8))
+ax.set_xticks([])
+ax.set_yticks([])
+
+# Optional: place chess pieces with text symbols
+pieces = [
+    ['r','n','b','q','k','b','n','r'],
+    ['p','p','p','p','p','p','p','p'],
+    ['.','.','.','.','.','.','.','.'],
+    ['.','.','.','.','.','.','.','.'],
+    ['.','.','.','.','.','.','.','.'],
+    ['.','.','.','.','.','.','.','.'],
+    ['P','P','P','P','P','P','P','P'],
+    ['R','N','B','Q','K','B','N','R']
+]
+
+piece_symbols = {
+    'r': '♜', 'n': '♞', 'b': '♝', 'q': '♛', 'k': '♚', 'p': '♟',
+    'R': '♖', 'N': '♘', 'B': '♗', 'Q': '♕', 'K': '♔', 'P': '♙'
+}
+
+for r in range(8):
+    for c in range(8):
+        piece = pieces[r][c]
+        if piece != '.':
+            ax.text(c + 0.5, 7.5 - r + 0.5, piece_symbols[piece],
+                    fontsize=30, ha='center', va='center', color='black')
+
+plt.show()
