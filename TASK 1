@@ -1,0 +1,26 @@
+num1 = int(input("enter the number1:"))
+num2 = int(input("enter the number2:"))
+
+print("the addition of two numbers is:",num1+num2)
+print("the subraction of two numbers is:",num1-num2)
+print("the multiplication of two numbers is:", num1*num2)
+print("the division of two numbers is:", num1 // num2)
+
+# task(1b)
+
+num1 = int(input("enter the number1:"))
+num2 = int(input("enter the number2:"))
+
+print(num1 & num2)
+print(num1 | num2)
+print(num1 ^ num2)
+
+# task(1c)
+
+num1 = int(input("enter the number1:"))
+num2 = int(input("enter the number2:"))
+
+print("the addition of two numbers is:",num1+num2)
+print("the subraction of two numbers is:",num1-num2)
+print("the multiplication of two numbers is:", num1*num2)
+print("the division of two numbers is:", num1 // num2)
