@@ -1,0 +1,35 @@
+def student_grade_analyzer(student_name,student_grade):
+  print("welcome to student grade analyzer")
+
+  num_students = len(student_name)
+  print("\nNumber of student:",num_students)
+
+  print("\nstudent_type:",type(student_name))
+  print("student_grade_type:",type(student_grade))
+
+  print("\nhighest grade:",max(student_grade))
+  print("lowest grade:",min(student_grade))
+
+  print("\nsorted_grades:",sorted(student_grade))
+  print("reversed_grade:",list(reversed(sorted(student_grade))))
+
+  print("\nrange from 1 to n:",list(range(1,len(student_grade)+1)))
+
+student_grade_analyzer(["alice","bob","charlie","diana"],[85,92,78,90])
+
+# task(7b)
+
+def math(a,b,operator):
+  if operator == "+":
+    return a+b
+  if operator == "-":
+    return a-b
+  if operator == "*":
+    print(a*b)
+  if operator == "/":
+    if b < 0:
+      return 0
+    else:
+      return a // b
+
+print("the result is:",math(10,5,"+"))
