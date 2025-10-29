@@ -1,0 +1,35 @@
+def addition(a,b):
+  return a+b
+
+def subraction(a,b):
+  return a-b
+
+def multiplication(a,b):
+  return a*b
+
+def division(a,b):
+  if b == 0:
+    return 0
+  else:
+    return a // b
+
+print(addition(10,20))
+print(subraction(10,20))
+print(multiplication(10,20))
+print(division(10,0))
+
+# task(3b)
+
+import math
+def circle_area(r):
+  return math.pi*r*r
+
+def rectange_area(l,b):
+  return l*b
+
+def triange_area(b,h):
+  return 0.5*b*h
+
+print(math.floor(circle_area(7)))
+print(rectange_area(10,20))
+print(math.floor(triange_area(10,20)))
